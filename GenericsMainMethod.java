@@ -1,32 +1,14 @@
 package com.bridgelabz.genericsexample;
 
 public class GenericsMainMethod {
-    static void maxIntegerNumber(Integer a, Integer b, Integer c){
-        Integer maximum = a;
-        if(b.compareTo(maximum) > 0)
-            maximum = b;
-        if (c.compareTo(maximum) > 0) {
-            maximum = c;
-        }
-        System.out.println(maximum + " is largest");
-    }
+    //Generic method for Integer,Float,String data type to find maximum of 3 values.
+    public static <T extends Comparable<T>>void maximumValue(T data1, T data2, T data3){
+        T maximum = data1;
 
-    static void maxFloatNumber(Float a, Float b, Float c){
-        Float maximum = a;
-        if(b.compareTo(maximum) > 0)
-            maximum = b;
-        if (c.compareTo(maximum) > 0) {
-            maximum = c;
-        }
-        System.out.println(maximum + " is largest");
-    }
-
-    static void maxStringValue(String value1, String value2, String value3){
-        String maximum = value1;
-        if(value2.compareTo(maximum) > 0)
-            maximum = value2;
-        if (value3.compareTo(maximum) > 0) {
-            maximum = value3;
+        if(data2.compareTo(maximum) > 0)
+            maximum = data2;
+        if (data3.compareTo(maximum) > 0) {
+            maximum = data3;
         }
         System.out.println(maximum + " is largest");
     }
@@ -35,12 +17,15 @@ public class GenericsMainMethod {
         System.out.println("Generics Example");
 
         int intA = 30, intB = 20, intC = 10;
-        maxIntegerNumber(intA,intB,intC);
-
         float floatA = 10.1f, floatB = 10.8f, floatC = 20.1f;
-        maxFloatNumber(floatA,floatB,floatC);
-
         String value1 = "Apple", value2 = "Peach", value3 =  "Banana";
-        maxStringValue(value1,value2,value3);
+
+        System.out.println();
+        System.out.println("Generic method started....");
+        maximumValue(intA,intB,intC);
+        maximumValue(floatA,floatB,floatC);
+        maximumValue(value1,value2,value3);
+        System.out.println("....Generic method ended....");
+        System.out.println();
     }
 }
