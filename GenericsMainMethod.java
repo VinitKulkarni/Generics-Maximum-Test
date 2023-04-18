@@ -16,6 +16,7 @@ public class GenericsMainMethod {
     public static void main(String[] args) {
         System.out.println("Generics Example");
 
+        //int,float,string variables
         int intA = 30, intB = 20, intC = 10;
         float floatA = 10.1f, floatB = 10.8f, floatC = 20.1f;
         String value1 = "Apple", value2 = "Peach", value3 =  "Banana";
